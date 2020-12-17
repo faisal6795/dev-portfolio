@@ -34,6 +34,11 @@ module.exports = {
                                 attribute: 'href',
                                 type: 'src',
                             },
+                            {
+                                tag: 'a',
+                                attribute: 'href',
+                                type: 'src',
+                            },
                         ],
                     },
                 },
