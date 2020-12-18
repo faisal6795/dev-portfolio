@@ -218,14 +218,6 @@ img {
 
 #profile .information .name {
   margin: 30vw 0 15vw;
-  -webkit-transition: all 0.5s ease-out;
-  transition: all 0.5s ease-out;
-}
-
-#profile .information .name.animate {
-  opacity: 0;
-  -webkit-transform: translateX(-25%);
-          transform: translateX(-25%);
 }
 
 #profile .information .name span {
@@ -1564,8 +1556,6 @@ footer .copyright {
     font-size: 2vw;
     display: inline-block;
     vertical-align: middle;
-    -webkit-transition: all 0.5s ease;
-    transition: all 0.5s ease;
   }
   #profile .information .name h1 {
     margin: 0.2em 0;

@@ -9,7 +9,6 @@ var sendBtn = document.querySelector('.send');
 var iso = new Isotope('.projects .container', { itemSelector: '.projects .container .card', masonry: { gutter: 32 } });
 
 document.addEventListener("DOMContentLoaded", function (event) {
-    var name = document.querySelector('.name');
     var exp = document.querySelectorAll('#experience .left, #experience .right');
     var skillBars = document.querySelectorAll('.skill .skill-bar');
     var options = {
@@ -25,7 +24,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
         });
     };
     var observer = new IntersectionObserver(callback, options);
-    observer.observe(name);
     exp.forEach(elem => observer.observe(elem));
     skillBars.forEach(elem => observer.observe(elem));
 });
