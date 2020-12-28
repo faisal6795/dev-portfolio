@@ -1,7 +1,7 @@
+import './style.scss';
 var navBarTabs = document.querySelector('.nav-bar ul');
 var portfolioTabs = document.querySelector('.heading ul');
 var selectedLine = document.querySelector('.selected-line');
-var knowMoreBtn = document.querySelector('.know-more');
 var designContainer = document.querySelector('.design-container');
 var leftArrow = document.querySelector('.left-arrow');
 var rightArrow = document.querySelector('.right-arrow');
@@ -78,10 +78,6 @@ function showCards(index) {
         }
     });
 }
-
-knowMoreBtn.addEventListener('click', function (event) {
-    document.querySelector('#about-me').scrollIntoView({ behavior: 'smooth' });
-});
 
 leftArrow.addEventListener('click', function (event) {
     scrollContainer(false);

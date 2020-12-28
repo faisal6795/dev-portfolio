@@ -2,7 +2,7 @@ const path = require('path');
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-    entry: './app.js',
+    entry: './main.js',
     mode: 'production',
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -44,10 +44,11 @@ module.exports = {
                 },
             },
             {
-                test: /\.css$/,
+                test: /\.scss$/,
                 use: [
                     'style-loader',
                     'css-loader',
+                    'sass-loader',
                 ],
             },
             {
