@@ -454,6 +454,11 @@ img {
                         background-image: url(assets/tictactoe.gif);
                     }
 
+                    &.malabis {
+                        background-size: cover;
+                        background-image: url(assets/malabis.png);
+                    }
+
                     &.sorting {
                         background-image: url(assets/sorting.gif);
                     }
