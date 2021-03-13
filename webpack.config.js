@@ -66,5 +66,13 @@ module.exports = {
             template: "index.html",
             minify: true,
         })
-    ]
+    ],
+    devServer: {
+        open: true,
+        historyApiFallback: {
+            rewrites: [
+                { from: /./, to: '/404.html' },
+            ],
+        },
+    },
 }
