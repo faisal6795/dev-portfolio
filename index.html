@@ -10,7 +10,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
     <link rel="manifest" href="assets/favicon/site.webmanifest">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@200&family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
     <title>Faisal Ansari</title>
     <style>
@@ -56,7 +56,7 @@
     </style>
 </head>
 
-<body onload="document.querySelector('.loader').classList.add('hide')">
+<body>
     <div class="loader">
         <div>
             <div>
@@ -98,11 +98,6 @@
                         <i class="icon experience"></i><span>Experience</span>
                     </a>
                 </li>
-                <li>
-                    <a href="#contact-us">
-                        <i class="icon contact"></i><span>Contact</span>
-                    </a>
-                </li>
             </ul>
         </nav>
     </header>
@@ -122,39 +117,20 @@
             <div class="wrapper">
                 <span class="subtitle">A bit</span>
                 <h2 class="underline">About me</h2>
-                <div class="avatar"><img src="assets/avatars/about.svg" width="100%" alt="About me"></div>
             </div>
             <div class="description">
-                <p>I am Faisal Ansari, a frontend developer based in Navi Mumbai. I have a rich experience in web
-                    development, building responsive websites, web apps and mobile applications based on web.</p>
-                <p style="display: none;">As an engineer, I have developed my mind to solve problems that makes my abilitites of
-                    Software Development more impactful. One of my strengths is that I always learn new stuffs and look
-                    for ways to improve the performance of the things I developed.</p>
-                <p>Also, I am good at</p>
-                <div class="languages">
-                    <ul>
-                        <li title="React JS"><img src="assets/icons/react.svg" class="icon" alt="React JS"></li>
-                        <li title="Angular"><img src="assets/icons/angular.svg" class="icon" alt="Angular"></li>
-                        <li title="Python"><img src="assets/icons/python.svg" class="icon" alt="Python"></li>
-                        <li title="Handlebars JS"><img src="assets/icons/handlebar.svg" class="icon" alt="Handlebars JS"></li>
-                        <li title="Backbone JS"><img src="assets/icons/backbone.svg" class="icon" alt="Backbone JS"></li>
-                        <li title="HTML 5"><img src="assets/icons/html.svg" class="icon" alt="HTML 5"></li>
-                        <li title="Javascript"><img src="assets/icons/js.svg" class="icon" alt="Javascript"></li>
-                        <li title="CSS 3"><img src="assets/icons/css.svg" class="icon" alt="CSS 3"></li>
-                        <li title="Redux"><img src="assets/icons/redux.svg" class="icon" alt="Redux"></li>
-                        <li title="JQuery"><img src="assets/icons/jquery.svg" class="icon" alt="JQuery"></li>
-                        <li title="Android"><img src="assets/icons/android.svg" class="icon" alt="Android"></li>
-                        <li title="Typescript"><img src="assets/icons/typescript.svg" class="icon" alt="Typescript"></li>
-                    </ul>
+                <div class="avatar"><img src="assets/avatars/about.svg" width="100%" alt="About me"></div>
+                <div class="text">
+                    <p>Through constant learning and creation, I produce aesthetic software to the highest standard. I’m largely framework agnostic but technologies I love right now are React, Angular and Styled Components.</p>
+                    <a href="assets/resume.pdf" download="Faisal Ansari Resume" class="btn resume">Download Resume</a>
                 </div>
-                <a href="assets/cv.pdf" download="Faisal Ansari CV" class="btn cv">Download CV</a>
             </div>
         </div>
     </section>
 
     <section id="portfolio">
         <div class="projects">
-            <span class="subtitle">Complete</span>
+            <span class="subtitle">Recent</span>
             <h2 class="underline">Portfolio</h2>
             <div class="heading">
                 <ul>
@@ -193,11 +169,11 @@
                         </div>
                     </a>
                 </div>
-                <div class="card design">
-                    <a href="https://codepen.io/faisalansari/full/oNLOpGa" class="flower" target="_blank" rel="noopener noreferrer">
+                <div class="card design long">
+                    <a href="https://codepen.io/faisalansari/full/XWdJPZb" class="watch" target="_blank" rel="noopener noreferrer">
                         <div class="clip">
                             <i class="icon"></i>
-                            <h5 class="title">Flower Animation</h5>
+                            <h5 class="title">Apple Watch</h5>
                             <span class="desc">Design</span>
                         </div>
                     </a>
@@ -208,6 +184,15 @@
                             <i class="icon"></i>
                             <h5 class="title">Malabis</h5>
                             <span class="desc">Web App</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="card design">
+                    <a href="https://codepen.io/faisalansari/full/oNLOpGa" class="flower" target="_blank" rel="noopener noreferrer">
+                        <div class="clip">
+                            <i class="icon"></i>
+                            <h5 class="title">Flower Animation</h5>
+                            <span class="desc">Design</span>
                         </div>
                     </a>
                 </div>
@@ -229,16 +214,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="card design wide">
-                    <a href="https://codepen.io/faisalansari/full/MWyKvar" class="balls" target="_blank" rel="noopener noreferrer">
-                        <div class="clip">
-                            <i class="icon"></i>
-                            <h5 class="title">Bouncing Balls</h5>
-                            <span class="desc">Design</span>
-                        </div>
-                    </a>
-                </div>
-                <!-- <div class="card app" style="display: none;">
+                <div class="card app hide">
                     <a href="/sorting" class="sorting" target="_blank" rel="noopener noreferrer">
                         <div class="clip">
                             <i class="icon"></i>
@@ -246,7 +222,7 @@
                             <span class="desc">App</span>
                         </div>
                     </a>
-                </div> -->
+                </div>
                 <div class="card design wide">
                     <a href="https://codepen.io/faisalansari/full/eYZzwNq" class="saturn" target="_blank" rel="noopener noreferrer">
                         <div class="clip">
@@ -255,50 +231,6 @@
                             <span class="desc">Design</span>
                         </div>
                     </a>
-                </div>
-            </div>
-            <div class="designs">
-                <span class="subtitle">Some</span>
-                <h2 class="underline">Cool Designs</h2>
-                <div class="design-container">
-                    <div class="design-card watch">
-                        <a href="https://codepen.io/faisalansari/full/XWdJPZb" target="_blank" rel="noopener noreferrer">
-                            <h5 class="title">Apple Watch</h5>
-                        </a>
-                    </div>
-                    <div class="design-card cubes">
-                        <a href="https://codepen.io/faisalansari/full/YzWBwVz" target="_blank" rel="noopener noreferrer">
-                            <h5 class="title">Sliding Cubes</h5>
-                        </a>
-                    </div>
-                    <div class="design-card liquid">
-                        <a href="https://codepen.io/faisalansari/full/xxVZKXR" target="_blank" rel="noopener noreferrer">
-                            <h5 class="title">Liquid Filling</h5>
-                        </a>
-                    </div>
-                    <div class="design-card face">
-                        <a href="https://codepen.io/faisalansari/full/RwrzbJV" target="_blank" rel="noopener noreferrer">
-                            <h5 class="title">Face Loading</h5>
-                        </a>
-                    </div>
-                    <div class="design-card ripple">
-                        <a href="https://codepen.io/faisalansari/full/Yzqqyog" target="_blank" rel="noopener noreferrer">
-                            <h5 class="title">Floating Ripples</h5>
-                        </a>
-                    </div>
-                    <div class="design-card boxes">
-                        <a href="https://codepen.io/faisalansari/full/RwrzqGj" target="_blank" rel="noopener noreferrer">
-                            <h5 class="title">Tumbling Boxes</h5>
-                        </a>
-                    </div>
-                    <a href="https://codepen.io/faisalansari/pens/public" target="_blank" rel="noopener noreferrer" class="btn see-more">
-                        <span>All Designs</span>
-                        <i class="icon arrow"></i>
-                    </a>
-                </div>
-                <div class="arrow-wrapper">
-                    <button class="btn left-arrow" title="Previous"></button>
-                    <button class="btn right-arrow" title="Next"></button>
                 </div>
             </div>
             <div class="services">
@@ -324,7 +256,6 @@
                         <h5 class="title">Web Apps</h5>
                     </div>
                 </div>
-                <div class="custom-bg"></div>
             </div>
     </section>
 
@@ -454,73 +385,6 @@
                 </div>
             </div>
         </div>
-        <div class="education">
-            <span class="subtitle">My</span>
-            <h2 class="underline">Education</h2>
-            <div class="edu-container">
-                <div class="wrapper">
-                    <div class="left animate">
-                        <h6 class="heading">BE Computers</h6>
-                        <span class="desc">2013-2017</span>
-                    </div>
-                    <div class="right animate">
-                        <h6 class="heading">Saboo Siddik College of Engineering</h6>
-                        <span class="desc">Byculla, Mumbai</span>
-                    </div>
-                </div>
-                <div class="wrapper">
-                    <div class="left animate">
-                        <h6 class="heading">MGM Junior College</h6>
-                        <span class="desc">Nerul Navi Mumbai</span>
-                    </div>
-                    <div class="right animate">
-                        <h6 class="heading">HSC (12th)</h6>
-                        <span class="desc">2011-2013</span>
-                    </div>
-                </div>
-                <div class="wrapper">
-                    <div class="left animate">
-                        <h6 class="heading">SSC (10th)</h6>
-                        <span class="desc">2001-2011</span>
-                    </div>
-                    <div class="right animate">
-                        <h6 class="heading">St. Xavier's High School</h6>
-                        <span class="desc">Nerul Navi Mumbai</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact-us">
-        <span class="subtitle">Let's</span>
-        <h4 class="underline">Catch up</h4>
-        <div class="contact-wrapper">
-            <div class="form-wrapper">
-                <span>Hello,</span>
-                <div class="input-wrapper">
-                    <input id="fullname" autocomplete="off" onchange="inputChange(event)" required>
-                    <label for="fullname">My name is</label>
-                    <span class="error-text">Oops! Please enter your name properly.</span>
-                </div>
-                <div class="input-wrapper">
-                    <input id="emailid" autocomplete="off" onchange="inputChange(event)" required>
-                    <label for="emailid">Here is my email</label>
-                    <span class="error-text">Oops! Incorrect email id, please try again.</span>
-                </div>
-                <div class="input-wrapper">
-                    <textarea id="message" required></textarea>
-                    <label for="message">I'm looking for</label>
-                    <span class="error-text">Oops! Please write proper message.</span>
-                </div>
-                <button class="btn send" title="Send"></button>
-                <span class="success hide-msg">Message sent successfully!</span>
-            </div>
-            <div class="contact-msg">
-                <span>Whether it's an inquiry or simply a 'hi',</span>
-                <span>We are friendly so don't be shy.</span>
-            </div>
-        </div>
     </section>
 
     <footer>
@@ -544,10 +408,8 @@
                 <li><a class="btn instagram" href="https://www.instagram.com/thefaisalansari" target="_blank" rel="noopener noreferrer" title="Instagram"></a></li>
             </ul>
         </div>
-        <span class="copyright">© 2020 Faisal Ansari.</span>
+        <span class="copyright">© 2021 Faisal Ansari.</span>
     </footer>
-
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
 </body>
 
 </html>

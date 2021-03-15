@@ -1,40 +1,11 @@
 $neon: #2bff00;
 $bg: #0d111e;
-$secondary: #181f37;
-$danger: #ff1b1b;
+$secondary: #13182b;
 $card-bg: #efefef;
-$ball-bg: #0a1c3b;
-$cubes-bg: #00ca92;
-$face-bg: #f6cb4f;
-$boxes-bg: #fa3663;
-$ripple-bg: #018882;
 $primary-font: "Lato", sans-serif;
-$secondary-font: "Roboto", sans-serif;
+$secondary-font: "Bitter", sans-serif;
 $filter: brightness(0) saturate(100%) invert(50%) sepia(77%) saturate(861%) hue-rotate(70deg) brightness(120%)
     contrast(115%);
-
-$bg-colors: (
-    #00d8ff,
-    #b52e31,
-    #376f9d,
-    #423426,
-    #0071b5,
-    #f1652a,
-    #f1bf22,
-    #2965f1,
-    #764abc,
-    #0868ac,
-    #3ddb85,
-    #007acc
-);
-
-@function css-function($function, $values...) {
-    @return $function + unquote("(") + $values + unquote(")");
-}
-
-@function css-min($values...) {
-    @return css-function(min, $values);
-}
 
 * {
     padding: 0;
@@ -177,14 +148,10 @@ img {
             .experience {
                 background-image: url(assets/icons/work.svg);
             }
-
-            .contact {
-                background-image: url(assets/icons/phone.svg);
-            }
         }
 
         li {
-            width: 20%;
+            flex: 1;
             height: 100%;
             color: #fff;
             cursor: pointer;
@@ -250,7 +217,7 @@ img {
             }
 
             h4 {
-                font-size: 1.65em;
+                font-size: 1.6em;
                 letter-spacing: 0.1em;
                 font-family: $secondary-font;
             }
@@ -271,27 +238,12 @@ img {
         }
     }
 
-    .know-more {
-        visibility: hidden;
-        width: 3em;
-        margin: 0 auto;
-        filter: $filter;
-        background-size: 50%;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-image: url(assets/icons/arrow.svg);
-
-        &:focus,
-        &:hover {
-            filter: none;
-        }
-    }
-
     #about-me {
         padding-top: 2em;
 
         .avatar {
-            margin: 3em 0;
+            margin: 2em auto;
+            width: 70%;
 
             img {
                 width: 100%;
@@ -299,8 +251,6 @@ img {
         }
 
         .wrapper {
-            margin-bottom: 3em;
-
             & > span {
                 padding-left: 0.5em;
             }
@@ -308,60 +258,16 @@ img {
 
         .description {
             p {
-                margin-top: 5em;
-                font-size: 1.25em;
                 line-height: 1.5;
+                margin-bottom: 2rem;
+                letter-spacing: 0.5px;
                 font-family: $secondary-font;
-
-                & + p {
-                    margin-top: 1.5em;
-                }
             }
 
-            .languages {
-                margin: 2em 0;
-
-                ul {
-                    display: flex;
-                    flex-wrap: wrap;
-                    justify-content: stretch;
-                }
-
-                li {
-                    flex-grow: 1;
-                    display: flex;
-                    align-items: center;
-                    width: calc(100% / 3);
-                    list-style-type: none;
-                    justify-content: center;
-                    height: calc((100vw - 4em) / 3);
-
-                    @each $current-color in $bg-colors {
-                        $i: index(
-                            $list: $bg-colors,
-                            $value: $current-color,
-                        );
-
-                        &:nth-child(#{$i}) {
-                            background: linear-gradient(
-                                180deg,
-                                rgba($color: $current-color, $alpha: 0.7),
-                                $current-color
-                            );
-                        }
-                    }
-
-                    .icon {
-                        width: 50%;
-                        height: 50%;
-                        object-fit: contain;
-                    }
-                }
-            }
-
-            .cv {
-                width: 10em;
-                margin: 0 auto;
+            .resume {
+                padding: 0 2em;
+                max-width: 15em;
+                margin: 3em auto 0;
                 text-decoration: none;
             }
         }
@@ -420,7 +326,7 @@ img {
         }
 
         .container {
-            margin-top: 2em;
+            margin: 2em 0 4em;
 
             .card {
                 margin-bottom: 2em;
@@ -447,8 +353,8 @@ img {
                     }
 
                     &.curis {
-                        background-size: cover;
-                        background-image: url(assets/curis.png);
+                        background-size: 70%;
+                        background-image: url(assets/curis.svg);
                     }
 
                     &.tictactoe {
@@ -456,8 +362,8 @@ img {
                     }
 
                     &.malabis {
-                        background-size: cover;
-                        background-image: url(assets/malabis.png);
+                        background-size: 70%;
+                        background-image: url(assets/malabis.svg);
                     }
 
                     &.sorting {
@@ -485,10 +391,10 @@ img {
                         background-image: url(assets/saturn.png);
                     }
 
-                    &.balls {
+                    &.watch {
                         background-size: contain;
-                        background-color: $ball-bg;
-                        background-image: url(assets/balls.gif);
+                        background-color: #fff;
+                        background-image: url(assets/watch.gif);
                     }
 
                     &.long {
@@ -547,155 +453,11 @@ img {
         }
     }
 
-    .designs {
-        margin-top: 5em;
-
-        .design-container {
-            overflow: auto;
-            margin: 2em -2em 0;
-            white-space: nowrap;
-            padding: 2em 2em 0 0;
-            scrollbar-width: none;
-
-            .design-card {
-                width: 16em;
-                height: 16em;
-                margin: 0 2em;
-                border-radius: 1em;
-                display: inline-block;
-                vertical-align: middle;
-                background-size: contain;
-                background-color: #fff;
-                background-position: center;
-                background-repeat: no-repeat;
-
-                &:not(:first-child) {
-                    margin-left: 0;
-                }
-
-                &.watch {
-                    background-image: url(assets/watch.gif);
-                }
-
-                &.liquid {
-                    background-image: url(assets/liquid.gif);
-                }
-
-                &.cubes {
-                    background-color: $cubes-bg;
-                    background-image: url(assets/cubes.gif);
-                }
-
-                &.face {
-                    background-color: $face-bg;
-                    background-image: url(assets/face.gif);
-                }
-
-                &.ripple {
-                    background-color: $ripple-bg;
-                    background-image: url(assets/ripple.gif);
-                }
-
-                &.boxes {
-                    background-color: $boxes-bg;
-                    background-image: url(assets/boxes.gif);
-                }
-
-                a {
-                    opacity: 0;
-                    width: 100%;
-                    height: 100%;
-                    outline: none;
-                    position: relative;
-                    border-radius: 1em;
-                    display: inline-block;
-                    text-decoration: none;
-                    transition: opacity 0.3s ease;
-                    background-color: rgba($color: $bg, $alpha: 0.7);
-
-                    &:hover,
-                    &:focus {
-                        opacity: 1;
-
-                        h5 {
-                            left: 1.5em;
-                        }
-                    }
-
-                    h5 {
-                        left: 0;
-                        top: 70%;
-                        color: #fff;
-                        font-size: 1.25em;
-                        position: absolute;
-                        transition: left 0.3s ease;
-                        text-transform: capitalize;
-                    }
-                }
-            }
-
-            .see-more {
-                padding: 0 1.5em;
-                display: inline-flex;
-                text-decoration: none;
-                vertical-align: middle;
-
-                &:focus .arrow,
-                &:hover .arrow {
-                    filter: none;
-                }
-
-                .arrow {
-                    width: 2em;
-                    height: 2em;
-                    filter: $filter;
-                    background-size: 75%;
-                    transform: rotate(-90deg);
-                    background-position: bottom;
-                    background-repeat: no-repeat;
-                    background-image: url(assets/icons/arrow.svg);
-                }
-            }
-        }
-
-        .arrow-wrapper {
-            display: flex;
-            margin-top: 2em;
-            justify-content: space-evenly;
-
-            .left-arrow,
-            .right-arrow {
-                width: 3em;
-                position: relative;
-
-                &::before {
-                    content: "";
-                    top: 50%;
-                    left: 50%;
-                    width: 25%;
-                    height: 25%;
-                    position: absolute;
-                    border: solid $neon;
-                    border-width: 0 0 2px 2px;
-                    transform: rotate(45deg) translate(-50%, -10%);
-                }
-
-                &:hover::before,
-                &:focus::before {
-                    border-color: $bg;
-                }
-            }
-
-            .right-arrow {
-                transform: rotateY(180deg);
-            }
-        }
-    }
-
     .services {
-        padding: 1em 2em;
-        margin: 7em -2em 0;
+        padding: 2em;
+        margin: 0 -2em;
         position: relative;
+        background-color: $secondary;
 
         .services-container {
             margin-top: 3em;
@@ -714,7 +476,6 @@ img {
                 }
 
                 div {
-                    display: flex;
                     height: calc(100% - 3em);
                 }
 
@@ -729,23 +490,10 @@ img {
                 }
             }
         }
-
-        .custom-bg {
-            left: 0;
-            right: 0;
-            top: -4em;
-            z-index: -1;
-            bottom: -4em;
-            position: absolute;
-            background: $secondary;
-            transform: skewY(7deg);
-        }
     }
 }
 
 #skills {
-    margin-top: 2em;
-
     .skill-container {
         margin-top: 3em;
 
@@ -837,6 +585,7 @@ img {
 
 #experience {
     overflow: hidden;
+    background-color: $secondary;
 
     h2 {
         margin-bottom: 1em;
@@ -912,169 +661,6 @@ img {
 
             span {
                 font-size: 0.875em;
-            }
-        }
-    }
-
-    .education {
-        display: none;
-        margin-top: 4em;
-    }
-}
-
-#contact-us {
-    .contact-wrapper {
-        display: flex;
-        margin-top: 1em;
-        position: relative;
-        align-items: center;
-        flex-flow: column-reverse;
-        justify-content: space-between;
-        background: url(assets/avatars/envelope.svg) center top no-repeat;
-        background-size: contain;
-
-        &::before {
-            content: "";
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            position: absolute;
-            background: rgba($color: $bg, $alpha: 0.4);
-        }
-
-        .contact-msg {
-            z-index: 1;
-            width: 100%;
-            margin: 7em 0;
-            text-align: center;
-
-            span {
-                display: block;
-            }
-        }
-    }
-
-    .form-wrapper {
-        z-index: 1;
-        width: 100%;
-        padding: 2em;
-        position: relative;
-        border-radius: 0.75em;
-        box-shadow: 0 0 2em rgba(0, 0, 0, 0.75);
-
-        &::before {
-            content: "";
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            z-index: -1;
-            position: absolute;
-            border-radius: 0.75em;
-            background: rgba($color: $bg, $alpha: 0.4);
-            backdrop-filter: saturate(180%) blur(20px);
-
-            @supports not (backdrop-filter: none) {
-                background: rgba($color: $bg, $alpha: 0.9);
-            }
-        }
-
-        & > span {
-            display: block;
-            margin-bottom: 1.5em;
-        }
-
-        .input-wrapper {
-            position: relative;
-            margin-bottom: 2.5em;
-
-            &:last-of-type {
-                margin-bottom: 2em;
-            }
-
-            input,
-            textarea {
-                width: 100%;
-                border: none;
-                resize: none;
-                outline: none;
-                color: #fff;
-                box-shadow: none;
-                font-size: 1.125em;
-                padding: 0.2em 0;
-                font-family: inherit;
-                background: transparent;
-                border-bottom: 2px solid #fff;
-
-                &:focus {
-                    border-color: $neon;
-
-                    & ~ label {
-                        color: $neon;
-                    }
-                }
-
-                &:focus ~ label,
-                &:valid ~ label {
-                    left: 0;
-                    top: -1.3em;
-                    font-size: 0.75em;
-                }
-            }
-
-            label {
-                left: 0;
-                top: 0.2em;
-                position: absolute;
-                font-size: 0.875em;
-                transition: all 0.3s ease;
-            }
-
-            .error-text {
-                color: $danger;
-                display: block;
-                margin-top: 0.5em;
-                font-size: 0.875em;
-                clip-path: inset(0 100% 0 0);
-                transition: clip-path 0.3s ease;
-            }
-
-            input.error {
-                &:not(:focus) {
-                    border-color: $danger;
-
-                    & ~ .error-text {
-                        clip-path: inset(0);
-                    }
-                }
-            }
-        }
-
-        .send {
-            width: 3em;
-            margin: 0 auto;
-            background-size: 50%;
-            background: url(assets/icons/send.svg) 40% 52% no-repeat;
-            filter: $filter;
-
-            &:focus,
-            &:hover {
-                filter: none;
-                background-color: $neon;
-            }
-        }
-
-        .success {
-            color: $neon;
-            margin-bottom: 0;
-            margin-top: 1.5em;
-            text-align: center;
-            clip-path: inset(0);
-            transition: clip-path 0.5s ease;
-
-            &.hide-msg {
-                clip-path: inset(0 100% 0 0);
             }
         }
     }
@@ -1239,11 +825,6 @@ footer {
 // small devices
 
 @media screen and (min-width: 600px) {
-    #profile #about-me .description .languages li {
-        width: calc(100% / 4);
-        height: calc((100vw - 4em) / 4);
-    }
-
     #portfolio {
         .projects .container {
             .card {
@@ -1282,8 +863,8 @@ footer {
                     .left,
                     .right {
                         margin-top: 0;
-                        padding-left: 2em;
-                        width: calc(50% - 1em);
+                        padding-left: 3em;
+                        width: 50%;
 
                         &.animate {
                             opacity: 0;
@@ -1294,7 +875,7 @@ footer {
                     .left {
                         padding-left: 0;
                         text-align: right;
-                        padding-right: 2em;
+                        padding-right: 3em;
 
                         &.animate {
                             opacity: 0;
@@ -1325,6 +906,8 @@ footer {
         height: 5em;
         bottom: unset;
         padding: 0 4em;
+        display: flex;
+        justify-content: space-between;
 
         .logo {
             width: 2em;
@@ -1334,12 +917,10 @@ footer {
         }
 
         ul {
-            float: right;
-            width: css-min(70%, 35em);
-
             a {
                 display: block;
                 line-height: 5em;
+                padding: 0 1em;
 
                 &:hover span,
                 &:focus span {
@@ -1349,6 +930,7 @@ footer {
 
             li {
                 position: relative;
+                width: auto;
 
                 &.selected::after {
                     content: "";
@@ -1399,7 +981,7 @@ footer {
                 bottom: unset;
                 z-index: unset;
                 position: relative;
-                border-radius: 50%;
+                border-radius: 71% 29% 34% 66% / 41% 32% 68% 59%;
                 width: calc(35vw - 2em);
                 height: calc(35vw - 2em);
             }
@@ -1423,29 +1005,37 @@ footer {
 
         #about-me {
             margin: 0;
-            display: flex;
             padding-top: 7em;
 
             .avatar {
-                padding-right: 4em;
+                margin: 0;
+                flex: 2;
             }
 
             .wrapper {
                 margin: 0;
-                width: 60%;
             }
 
             .description {
-                width: 40%;
+                margin-top: 2em;
+                display: flex;
+                align-items: center;
+                gap: 15vw;
+            }
 
-                .languages li {
-                    height: calc((100vw - 8em) / 10);
+            .text {
+                flex: 2;
+
+                .resume {
+                    margin: 0 auto;
                 }
             }
         }
     }
 
     #portfolio {
+        padding-bottom: 0;
+
         .projects {
             .heading {
                 width: 25em;
@@ -1468,18 +1058,9 @@ footer {
             }
         }
 
-        .designs .design-container {
-            margin: 2em -4em 0;
-            padding: 2em 4em 0 0;
-
-            .design-card {
-                margin: 0 2em 0 4em;
-            }
-        }
-
         .services {
-            margin: 12em -4em 0;
-            padding: 2em 4em;
+            margin: 0 -4em;
+            padding: 4em 4em 5em;
 
             &::before {
                 height: 8em;
@@ -1493,10 +1074,11 @@ footer {
 
             .services-container {
                 display: flex;
-                justify-content: space-between;
+                column-count: 3;
+                column-gap: 2em;
 
                 .card {
-                    width: calc((100% - 4em) / 3);
+                    margin-bottom: 0;
 
                     &:nth-child(even) {
                         margin-left: 0;
@@ -1516,42 +1098,14 @@ footer {
         }
     }
 
-    #skills {
-        margin-top: 4em;
-
-        .skill-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-
-            .skill {
-                width: calc(50% - 2em);
-            }
-        }
-    }
-
-    #contact-us {
-        .contact-wrapper {
-            padding: 4em 0;
-            flex-flow: row;
-            background-position: right center;
-
-            .contact-msg {
-                margin: 0;
-                width: 45%;
-                font-size: 1.8vw;
-            }
-        }
-
-        .form-wrapper {
-            width: css-min(50%, 30em);
-            box-shadow: 0 0 4em rgba(0, 0, 0, 0.75);
-        }
+    #skills .skill-container {
+        column-count: 2;
+        column-gap: 4em;
     }
 
     footer {
         margin-top: 0;
-        padding: 2em 4em 4em;
+        padding: 4em;
 
         .details {
             display: flex;
@@ -1572,11 +1126,8 @@ footer {
 // large devices
 
 @media screen and (min-width: 1024px) {
-    #profile {
-        #about-me .description .languages li {
-            width: calc(100% / 6);
-            height: calc((100vw - 8em) / 15);
-        }
+    #profile #about-me .text {
+        flex: 3;
     }
 
     #portfolio {
@@ -1595,8 +1146,8 @@ footer {
             }
         }
 
-        .services .services-container .card {
-            width: calc((100% - 6em) / 3);
+        .services .services-container {
+            column-gap: 3em;
         }
     }
 }

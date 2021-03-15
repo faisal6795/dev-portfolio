@@ -1,12 +1,11 @@
 import './style.scss';
+var loader = document.querySelector('.loader');
 var navBarTabs = document.querySelector('.nav-bar ul');
 var portfolioTabs = document.querySelector('.heading ul');
 var selectedLine = document.querySelector('.selected-line');
-var designContainer = document.querySelector('.design-container');
-var leftArrow = document.querySelector('.left-arrow');
-var rightArrow = document.querySelector('.right-arrow');
-var sendBtn = document.querySelector('.send');
 var iso = new Isotope('.projects .container', { itemSelector: '.projects .container .card', masonry: { gutter: 32 } });
+
+window.addEventListener("load", () => { loader.classList.add('hide') })
 
 document.addEventListener("DOMContentLoaded", function (event) {
     var exp = document.querySelectorAll('#experience .left, #experience .right');
@@ -63,74 +62,11 @@ function animateUnderline(element, index) {
 }
 
 function showCards(index) {
-    var getSelection = (index) => {
-        switch (index) {
-            case 1: return 'card';
-            case 2: return 'app';
-            case 3: return 'game';
-            case 4: return 'design';
-        }
-    }
+    const cardList = ['card', 'app', 'game', 'design'];
 
     iso.arrange({
         filter: function (itemElem) {
-            return itemElem.classList.contains(getSelection(index));
+            return itemElem.classList.contains(cardList[index - 1]);
         }
-    });
-}
-
-leftArrow.addEventListener('click', function (event) {
-    scrollContainer(false);
-});
-
-rightArrow.addEventListener('click', function (event) {
-    scrollContainer(true);
-});
-
-sendBtn.addEventListener('click', function (event) {
-    var name = document.getElementById('fullname');
-    var email = document.getElementById('emailid');
-    var message = document.getElementById('message');
-    var success = document.querySelector('.success');
-    var nameRegex = /^[a-zA-Z'-.]+(?: [a-zA-Z'-.]+)?$/;
-    var emailRegex = /^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-    var showHideError = (elem, regex) => { (elem.value.trim() === '' || !regex.test(elem.value.trim())) && elem.classList.add('error'); }
-    var showSuccessMsg = (msg) => { success.classList.remove('hide-msg'); }
-
-    showHideError(name, nameRegex);
-    showHideError(email, emailRegex);
-
-    if (name.classList.contains('error') || email.classList.contains('error') || name.value.trim() === '' || email.value.trim() === '') {
-        return;
-    }
-
-    Email.send({
-        Host: "smtp.gmail.com",
-        Username: "faisal.faizansari@gmail.com",
-        Password: "rmfdxngxiqltrybp",
-        To: "faisal.faizansari@gmail.com",
-        From: email.value.trim(),
-        Subject: "Message from " + name.value.trim(),
-        Body: message.value.trim()
-    }).then(showSuccessMsg);
-
-    name.value = '';
-    email.value = '';
-    message.value = '';
-});
-
-function inputChange(event) {
-    event.target.classList.remove('error');
-}
-
-function scrollContainer(isRight) {
-    var cardWidth = 292;
-    var scroll = isRight
-        ? (Math.floor(designContainer.scrollLeft / cardWidth) + 1) * cardWidth
-        : (Math.round(designContainer.scrollLeft / cardWidth) - 1) * cardWidth;
-
-    designContainer.scroll({
-        left: scroll,
-        behavior: 'smooth'
     });
 }
