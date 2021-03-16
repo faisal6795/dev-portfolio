@@ -353,7 +353,6 @@ img {
                     }
 
                     &.curis {
-                        background-size: 70%;
                         background-image: url(assets/curis.svg);
                     }
 
@@ -362,7 +361,6 @@ img {
                     }
 
                     &.malabis {
-                        background-size: 70%;
                         background-image: url(assets/malabis.svg);
                     }
 
@@ -386,9 +384,10 @@ img {
                         background-image: url(assets/daynight.gif);
                     }
 
-                    &.saturn {
+                    &.error-page {
                         background-color: #000;
-                        background-image: url(assets/saturn.png);
+                        background-size: contain;
+                        background-image: url(assets//avatars/404.svg);
                     }
 
                     &.watch {
